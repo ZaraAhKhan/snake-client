@@ -21,8 +21,7 @@ const connect = function() {
   return conn;
   
 };
-console.log("Connecting ...");
-connect();
+
 // const movements = ["Move: up","Move: left","Move: down","Move: right"];
 //     for (let i = 0; i < movements.length; i++) {
 //       setInterval(() => {
