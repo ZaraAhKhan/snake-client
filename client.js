@@ -9,6 +9,7 @@ const connect = function() {
   conn.on("connect",() => {
     console.log("Successfully connected to game server");
     conn.write("Name: ZAK");
+    conn.write("Move: up");
   });
 
   // interpret incoming data as text
@@ -22,5 +23,9 @@ const connect = function() {
 };
 console.log("Connecting ...");
 connect();
-
+// const movements = ["Move: up","Move: left","Move: down","Move: right"];
+//     for (let i = 0; i < movements.length; i++) {
+//       setInterval(() => {
+//         conn.write(movements[i]);
+//       }, i * 1000);
 module.exports = {connect};
