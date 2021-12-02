@@ -9,13 +9,21 @@ const connect = function() {
   conn.on("connect",() => {
     console.log("Successfully connected to game server");
     conn.write("Name: ZAK");
-    conn.write("Move: up");
+    conn.write("Say: Hello");
+
   });
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
   conn.on("data",(data) => {
     console.log(data);
+  });
+
+  
+  process.stdin.on("data", (key) => {
+    if (key === "z") {
+      conn.write("Say: The end");
+    }
   });
 
   return conn;
